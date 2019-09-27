@@ -1,31 +1,50 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
 import Menus from "./compoents/menus";
 import { Layout } from "antd";
 import HomeHeader from "./compoents/header";
+import HomeContent from "./compoents/homeContent";
+import { NProgress } from "@tanem/react-nprogress";
 const { Header, Footer, Sider, Content } = Layout;
 class Home extends Component {
   state = {
-    MenuClose: true
+    MenuClose: false
   };
   menusClosed = () => {
-    debugger;
     this.setState({
       MenuClose: !this.state.MenuClose
     });
-    // this.MenuClose = !this.MenuClose;
   };
   render() {
     return (
       <Layout>
-        <Sider>
+        <Sider
+          trigger={null}
+          collapsed={this.state.MenuClose}
+          style={{ background: "#fff" }}
+        >
           <Menus MenuClose={this.state.MenuClose} />
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: "0 20px" }}>
-            <HomeHeader menusClosed={this.menusClosed} />
-          </Header>
-          <Content className="title">Content</Content>
+          <NProgress
+            animationDuration={300}
+            incrementDuration={500}
+            isAnimating
+            minimum={0.1}
+          >
+            {({ animationDuration, isFinished, progress }) => (
+              <Header style={{ background: "#fff", padding: "0 20px" }}>
+                <HomeHeader
+                  menusClosed={this.menusClosed}
+                  MenuClose={this.state.MenuClose}
+                  animationDuration={animationDuration}
+                  progress={progress}
+                />
+              </Header>
+            )}
+          </NProgress>
+          <Content className="title">
+            <HomeContent />
+          </Content>
           <Footer>Footer</Footer>
         </Layout>
       </Layout>

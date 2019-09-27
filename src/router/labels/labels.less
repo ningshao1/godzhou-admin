@@ -1,0 +1,36 @@
+.labels-star::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #f5222d;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+.label-error {
+  color: #f5222d;
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0;
+}
+.label-error-enter {
+  opacity: 0;
+}
+.label-error-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.label-error-enter-done {
+  opacity: 1;
+}
+
+.label-error-exit {
+  opacity: 1;
+}
+.label-error-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.label-error-exit-done {
+  opacity: 0;
+}

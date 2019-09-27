@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tanem/react-nprogress": "^1.1.32",
     "antd": "^3.20.0",
+    "braft-editor": "^2.3.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-transition-group": "^4.2.1"
   },
   "scripts": {
     "start": "react-app-rewired start",

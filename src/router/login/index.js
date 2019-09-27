@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Input, Card, Form, Button, Icon, Row, Col } from "antd";
-import style from "./login.module.less";
+import style from "../login/login.module.less";
 class login extends Component {
   render() {
     return (
